@@ -1,6 +1,3 @@
-Here's a README.md for your project:
-
-```markdown
 # Project Accountability 2025 🎯
 
 A modern, AI-powered accountability tracker that helps you stay on top of your 2025 goals through daily video check-ins and intelligent progress analysis.
@@ -16,7 +13,6 @@ A modern, AI-powered accountability tracker that helps you stay on top of your 2
 - 📊 **Progress Tracking**: Visual tracking of daily, weekly, monthly, and yearly progress
 - 📅 **Activity Calendar**: Interactive calendar showing your completion history
 - ⚡ **Real-time Updates**: Instant feedback on your daily achievements
-- 🎨 **Modern UI**: Clean, responsive design with a beautiful dark theme
 
 ## Tech Stack
 
@@ -24,6 +20,7 @@ A modern, AI-powered accountability tracker that helps you stay on top of your 2
 - TypeScript
 - Tailwind CSS
 - Google Gemini AI
+- Daily for WebRTC
 - Tavus AI for video processing
 - Webhook.site for callback handling
 
