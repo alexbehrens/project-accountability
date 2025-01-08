@@ -2,7 +2,7 @@
 
 A modern, AI-powered accountability tracker that helps you stay on top of your 2025 goals through daily video check-ins and intelligent progress analysis.
 
-![Project Screenshot](screenshot.png)
+![Project Screenshot](/public/screenshot.png)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/yourusername/project-accountability-2025)
 
