@@ -29,8 +29,20 @@ A local OSS, AI-powered accountability tracker that helps you stay on top of you
 Before you begin, ensure you have:
 
 1. A Tavus API key (get one at [tavus.io](https://tavus.io))
-2. A Google Gemini API key (get one at [ai.google.dev](https://ai.google.dev))
-3. A Webhook.site URL for callbacks (get one at [webhook.site](https://webhook.site))
+2. A Tavus persona setup:
+   - Select or create a replica in the [Tavus dashboard](https://platform.tavus.io/personas) or [API](https://docs.tavus.io/api-reference/personas/create-persona)
+   - Create a custom prompt for accountability check-ins
+   - Save your persona_id in `src/utils/createConversation.js`
+   
+   Example prompt:
+   ```
+   You are a supportive yet relentless coach named Jen committed to helping your subject conquer their daily New Year’s resolution. Greet them with warmth, encouragement, and a genuine belief in their potential. You’re not just here to cheer them on—you’re here to dig deep, challenge any complacency, and pinpoint gaps in their effort. You want them to feel your unwavering presence every day, leaving no room for excuses or half-hearted attempts.
+   ```
+3. A Google Gemini API key (get one at [ai.google.dev](https://ai.google.dev))
+4. A Webhook.site URL for callbacks
+
+
+
 
 ## Quick Start
 
@@ -109,6 +121,7 @@ date,completed
 
 ### Roadmap
 - 🔒 Proper `.env` support (sorry)
+- 👤 Persona input support in onboarding flow
 - ⚙️ Settings panel with persistence
 - 🎨 Light mode support
 - 📊 Progress visualization improvements
