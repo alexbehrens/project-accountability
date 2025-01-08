@@ -36,8 +36,8 @@ Before you begin, ensure you have:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/project-accountability-2025.git
-cd project-accountability-2025
+git clone https://github.com/alexbehrens/project-accountability.git
+cd project-accountability
 ```
 
 2. Install dependencies:
@@ -46,7 +46,7 @@ npm install
 ```
 
 3. Create your onboarding configuration:
-- A default `onboarding-data.json` will be created in the `public` folder
+- A default `onboarding-data.json` exists in the `public` folder
 - Update it with your API keys and preferences
 
 4. Start the development server:
