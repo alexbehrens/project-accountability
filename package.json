@@ -1,0 +1,41 @@
+{
+  "name": "nyr",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently \"npm run dev\" \"node server/index.js\"",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "server": "node server/index.js",
+    "postinstall": "node scripts/init-onboarding.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.3",
+    "concurrently": "^8.2.2",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "@daily-co/daily-js": "^0.74.0",
+    "@daily-co/daily-react": "^0.22.0",
+    "@google/generative-ai": "^0.21.0",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.x",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.6.0",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^3.0.3",
+    "ldrs": "^1.0.2",
+    "lucide-react": "^0.469.0",
+    "postcss": "^8.x",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss": "^3.x"
+  }
+}

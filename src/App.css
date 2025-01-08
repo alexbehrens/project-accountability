@@ -1,0 +1,264 @@
+:root {
+  --background: #0a0a0a;
+  --text: #ffffff;
+  --purple: #8b5cf6;
+  --green: #4ade80;
+  --blue: #60a5fa;
+  --grid-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* API Key Gate Styles */
+.api-key-gate {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.api-key-gate input {
+  padding: 1rem;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+}
+
+.api-key-gate button {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background: var(--purple);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.api-key-gate.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.progress-section, .activity-section {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.progress-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.progress-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progress-bar-container {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.verify-button {
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.verify-button:hover {
+  opacity: 0.9;
+}
+
+/* Calendar Styles */
+.activity-calendar {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header button {
+  background: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.calendar-header button:hover {
+  opacity: 0.9;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.weekday {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.1); /* Default background */
+}
+
+.calendar-day:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.calendar-day.empty {
+  background: transparent;
+  cursor: default;
+}
+
+.calendar-day.completed {
+  background: var(--green);
+  color: black;
+}
+
+.calendar-day.failed {
+  background: rgb(239 68 68 / 0.5); /* Brighter red */
+}
+
+.calendar-day.pending {
+  background: rgb(75 85 99 / 0.5); /* Brighter grey for today's null date */
+}
+
+.calendar-day.missed {
+  background: rgb(239 68 68 / 0.5); /* Brighter red for failed past dates */
+}
+
+.calendar-day.future {
+  background: rgba(255, 255, 255, 0.1); /* Default grey for future dates */
+}
+
+.step-indicator {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  resize: vertical;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.back-button, .next-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button {
+  background-color: transparent;
+  color: #6b7280;
+}
+
+.next-button {
+  background-color: #1f2937;
+  color: white;
+}
+
+.progress-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #6366f1;
+  width: 2rem;
+}
+
+.error {
+  color: #ef4444;
+  margin-top: 0.5rem;
+} 
