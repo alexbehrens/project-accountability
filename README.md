@@ -4,7 +4,7 @@ A modern, AI-powered accountability tracker that helps you stay on top of your 2
 
 ![Project Screenshot](/public/screenshot.png)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/yourusername/project-accountability-2025)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/alexbehrens/project-accountability)
 
 ## Features
 
