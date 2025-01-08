@@ -1,6 +1,6 @@
 # Project Accountability 2025 🎯
 
-A modern, AI-powered accountability tracker that helps you stay on top of your 2025 goals through daily video check-ins and intelligent progress analysis.
+A local OSS, AI-powered accountability tracker that helps you stay on top of your 2025 goals through daily video check-ins and intelligent progress analysis.
 
 ![Project Screenshot](/public/screenshot.png)
 
@@ -19,10 +19,10 @@ A modern, AI-powered accountability tracker that helps you stay on top of your 2
 - React + Vite
 - TypeScript
 - Tailwind CSS
-- Google Gemini AI
-- Daily for WebRTC
-- Tavus AI for video processing
-- Webhook.site for callback handling
+- [Tavus](https://tavus.io) for CVI (Conversational Video Interface)
+- [Daily](https://daily.co) for WebRTC
+- [Google Gemini](https://ai.google.dev) for conversational analysis
+- [webhook.site](https://webhook.site) for callback handling
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ Before you begin, ensure you have:
 
 1. A Tavus API key (get one at [tavus.io](https://tavus.io))
 2. A Google Gemini API key (get one at [ai.google.dev](https://ai.google.dev))
-3. A Webhook.site URL for callbacks
+3. A Webhook.site URL for callbacks (get one at [webhook.site](https://webhook.site))
 
 ## Quick Start
 
@@ -88,7 +88,7 @@ date,completed
 
 #### Tavus AI Video Processing
 `src/utils/createConversation.js`:
-- Creates personalized video sessions using user's name and goal
+- Creates personalized video sessions using user's name and goal with custom Daily room
 - Loads activity history for conversation context
 - Configures webhook callbacks for transcription processing
 - Manages video recording properties and duration limits
@@ -99,40 +99,6 @@ date,completed
 - Provides structured completion assessment
 - Determines daily goal achievement status
 
-### Data Management
-
-#### Configuration Handler
-`src/utils/storage.ts`:
-```typescript
-interface OnboardingData {
-  tavusApiKey: string;
-  geminiApiKey: string;
-  name: string;
-  primaryGoal: string;
-  frequency: 'Daily' | 'Weekly' | 'Monthly';
-  lastUpdated: string;
-}
-```
-- Manages API key storage and verification
-- Handles onboarding state persistence
-- Provides type-safe configuration access
-
-#### Activity Tracking
-`src/utils/csvHandler.ts`:
-```typescript
-interface ActivityData {
-  date: string;
-  completed: boolean;
-}
-```
-- Handles CSV parsing and serialization
-- Manages activity completion status
-- Tracks completion streaks
-
-### File Operations
-`vite.config.ts` provides two main endpoints:
-- `PUT /onboarding-data.json`: Updates user configuration
-- `POST /api/activities`: Updates activity completion status
 
 ### Data Flow
 1. User records check-in via `VideoVerification.jsx`
@@ -140,10 +106,20 @@ interface ActivityData {
 3. Gemini analyzes transcript via `geminiAnalyzer.js`
 4. Results saved to `activities.csv` via `csvHandler.ts`
 
+
+### Roadmap
+- 🔒 Proper `.env` support (sorry)
+- ⚙️ Settings panel with persistence
+- 🎨 Light mode support
+- 📊 Progress visualization improvements
+  - Fix weekly progress calculation
+  - Add trend analysis
+  - Implement heatmap for year view
+
+
 ### Security Note
 Current implementation stores API keys in `onboarding-data.json` for development.
-For production, implement:
-
+For production, use a proper dot ENV file.
 
 ## License
 
