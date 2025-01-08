@@ -10,7 +10,7 @@ export async function analyzeTranscriptWithGemini(transcriptData, primaryGoal) {
   
   try {
     const genAI = new GoogleGenerativeAI(onboardingData.geminiApiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
 
     const transcriptText = typeof transcriptData === 'string' 
       ? transcriptData 
