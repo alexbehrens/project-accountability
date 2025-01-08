@@ -1,20 +1,34 @@
 const fs = require('fs');
 const path = require('path');
 
-const defaultData = {
-  tavusApiKey: '',
-  geminiApiKey: '',
-  callbackUrl: '',
-  name: '',
-  primaryGoal: '',
-  frequency: 'Daily',
-  lastUpdated: ''
+const defaultOnboardingData = {
+  tavusApiKey: "",
+  geminiApiKey: "",
+  callbackUrl: "",
+  name: "",
+  primaryGoal: "",
+  frequency: "Daily",
+  lastUpdated: new Date().toISOString()
 };
 
-const onboardingFile = path.join(process.cwd(), 'public', 'onboarding-data.json');
+const defaultActivities = "date,completed\n2025-01-01,false";
 
-// Create the file if it doesn't exist
-if (!fs.existsSync(onboardingFile)) {
-  fs.writeFileSync(onboardingFile, JSON.stringify(defaultData, null, 2));
-  console.log('Created onboarding-data.json with default values');
-} 
+// Ensure the public directory exists
+const publicDir = path.join(__dirname, '../public');
+if (!fs.existsSync(publicDir)) {
+  fs.mkdirSync(publicDir, { recursive: true });
+}
+
+// Create default onboarding-data.json
+fs.writeFileSync(
+  path.join(publicDir, 'onboarding-data.json'),
+  JSON.stringify(defaultOnboardingData, null, 2)
+);
+
+// Create default activities.csv
+fs.writeFileSync(
+  path.join(publicDir, 'activities.csv'),
+  defaultActivities
+);
+
+console.log('Initialization complete: Created default configuration files');
